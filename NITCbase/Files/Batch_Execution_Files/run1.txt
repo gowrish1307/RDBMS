@@ -1,0 +1,17 @@
+//Q3
+create table Organizers(name STR, eventId NUM)
+open table Organizers
+INSERT INTO Organizers VALUES FROM organizers.csv
+open table Participants
+open table Locations
+open table Events
+SELECT id,title,regNo,location FROM Events JOIN Participants INTO EP WHERE Events.title=Participants.event
+open table EP
+SELECT regNo,location,name FROM EP JOIN Organizers INTO EPO WHERE EP.id=Organizers.eventId//Q3-1
+SELECT regNo,title,name FROM EP JOIN Organizers INTO R1 WHERE EP.id=Organizers.eventId//Q3-2
+open table R1
+SELECT regNo,title FROM R1 INTO Result WHERE name=Thomas
+close table EP
+close table R1
+drop table EP
+drop table R1

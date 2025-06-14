@@ -1,0 +1,9 @@
+----- B+ TREE BLOCKS -----
+BLOCK 7095
+Block Type: IND_LEAF
+Parent Block: 1
+No of entries: 2
+left node: -1, right node: -1
+key_val: 0.00
+key_val: 0.00
+---------

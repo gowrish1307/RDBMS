@@ -1,0 +1,32 @@
+create table Participants(regNo NUM, event STR)
+create table Locations(name STR, capacity NUM)
+create table Events(id NUM, title STR, location STR)
+open table Participants
+open table Locations
+open table Events
+INSERT INTO Participants VALues From participants.csv
+INSERT INTO Locations VALues From locations.csv
+INSERT INTO Events VALues From events.csv
+open table Participants
+open table Locations
+open table Events
+SELECT name FROM Locations join Events INTO EventLocations WHERE Locations.name=Events.location //Q1-1
+SELECT * FROM Participants Join Events INTO Temp Where Events.title=Participants.event
+open table Temp
+SELECT regNo,event FROM Temp INTO Audi WHERE location=Audi //Q1-2
+SELECT * FROM Events Join Locations INTO T1 WHERE Events.location=Locations.name
+open table T1
+SELECT * FROM T1 INTO T2 WHERE capacity>100
+open table T2
+SELECT * FROM T2 INTO T3 WHERE capacity<200
+open table T3
+SELECT regNo,title FROM T3 JOIN Participants INTO Result1 Where T3.title=Participants.event //Q1-3
+close table T1
+close table T2
+close table T3
+close table Temp
+drop table T1
+drop table T2
+drop table T3
+drop table Temp
+
